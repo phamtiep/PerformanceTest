@@ -1,0 +1,37 @@
+
+syntax = "proto3";
+
+package connectedCar;
+
+option java_outer_classname = "VehicleStatusProto";
+
+message VehicleStatus {
+  string vehicle_id = 1;
+  int64  timestamp = 2;
+  Location location = 3;
+  FuelStatus fuelStatus = 4;
+  SensorData sensorData = 5;
+}
+
+message Location {
+  double latitude = 1;
+  double longitude = 2;
+}
+
+message FuelStatus {
+  float fuel_level_percentage = 1;
+  float fuel_level_liters = 2;
+}
+
+message SensorData {
+  double humidity = 1;
+  WeatherCondition weatherCondition = 2;
+}
+
+enum WeatherCondition {
+  WEATHER_CONDITION_UNSPECIFIED = 0;
+  WEATHER_CONDITION_SUNNY = 1;
+  WEATHER_CONDITION_CLOUDY = 2;
+  WEATHER_CONDITION_RAIN = 3;
+  WEATHER_CONDITION_SNOW = 4;
+}

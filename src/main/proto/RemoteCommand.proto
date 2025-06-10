@@ -1,0 +1,27 @@
+// overall message
+
+syntax = "proto3";
+
+package connectedCar;
+
+option java_outer_classname = "RemoteCommandProto";
+
+message RemoteCommandBase {
+  string vehicle_id = 1;
+  int64 timestamp = 2;
+}
+
+
+message EngineControl {
+  bool is_start = 1;
+  RemoteCommandBase remoteCommandBase = 2;
+}
+
+message DoorControl {
+  bool is_lock = 2;
+  RemoteCommandBase remoteCommandBase = 2;
+}
+
+
+
+

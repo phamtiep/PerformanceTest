@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+package connectedCar;
+
+option java_outer_classname = "VehicleAlertProto";
+
+message VehicleAlert {
+  string vehicle_id = 1;
+  Message message = 2;
+}
+
+message Message {
+  string content = 1;
+  int64 timestamp = 2;
+  OperationType operationType = 3;
+}
+
+enum OperationType {
+  ALERT = 0;
+  NOTIFICATION = 1;
+}
