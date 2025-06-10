@@ -18,7 +18,7 @@ message EngineControl {
 }
 
 message DoorControl {
-  bool is_lock = 2;
+  bool is_lock = 1;
   RemoteCommandBase remoteCommandBase = 2;
 }
 
