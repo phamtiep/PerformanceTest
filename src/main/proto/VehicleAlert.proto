@@ -3,6 +3,7 @@ syntax = "proto3";
 
 package connectedCar;
 
+
 option java_outer_classname = "VehicleAlertProto";
 
 message VehicleAlert {

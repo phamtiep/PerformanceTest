@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package validate;
+
+
+option java_package = "build.buf.validate"; // <-- rất quan trọng cho Java
+option java_outer_classname = "ValidateProto";
+
+// PGV dùng những messages này làm annotations (rules)
+message BoolRules {
+  bool const = 1;
+}
+
+message Int32Rules {
+  int32 const = 1;
+  int32 lt = 2;
+  int32 lte = 3;
+  int32 gt = 4;
+  int32 gte = 5;
+  repeated int32 in = 6;
+  repeated int32 not_in = 7;
+  bool ignore_empty = 8;
+}
+
+message StringRules {
+  string const = 1;
+  string pattern = 2;
+  string prefix = 3;
+  string suffix = 4;
+  int32 len = 5;
+  int32 min_len = 6;
+  int32 max_len = 7;
+  bool email = 8;
+  bool hostname = 9;
+  bool ip = 10;
+  bool ipv4 = 11;
+  bool ipv6 = 12;
+  bool uri = 13;
+  bool uri_ref = 14;
+  bool address = 15;
+  bool uuid = 16;
+  bool well_known_regex = 17;
+  bool strict = 18;
+  bool ignore_empty = 19;
+}
+
+// ... bạn có thể bổ sung các rule khác nếu cần

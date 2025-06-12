@@ -1,8 +1,7 @@
-// overall message
 
 syntax = "proto3";
-
 package connectedCar;
+
 
 option java_outer_classname = "RemoteCommandProto";
 
@@ -13,7 +12,7 @@ message RemoteCommandBase {
 
 
 message EngineControl {
-  bool is_start = 1;
+  bool is_start = 1 ;
   RemoteCommandBase remoteCommandBase = 2;
 }
 

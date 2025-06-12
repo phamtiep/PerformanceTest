@@ -11,5 +11,5 @@ message Old{
 }
 message New{
   string name = 1;
-  int64 birth = 3;
+  int32 birth = 2;
 }
